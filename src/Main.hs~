@@ -37,7 +37,7 @@ sum_elem bst = let
                   go bst' sum = if bst' /= empty_tree
                                     then (value bst') + go (bstl bst') 0 + go (bstr bst') 0
                                 else sum
-			   in go bst 0
+               in go bst 0
 
 -------------------------------------------------------------
 --finding element in binary search tree

@@ -24,10 +24,10 @@ genBStree (x:xs) = Node x (genBStree (filter (<x) xs))
 --finding high of binary search tree
 high_of_bstree :: BStree -> Int
 high_of_bstree bst = let 
-						go bst' count = if bst' /= empty_tree 
-					     					then go (bstl bst') count+1
-					 					else count
-					 in go bst (if bst /= empty_tree then 1 else 0)
+                        go bst' count = if bst' /= empty_tree 
+                                            then go (bstl bst') count+1
+                                        else count
+                     in go bst (if bst /= empty_tree then 1 else 0)
 
 
 -------------------------------------------------------------
