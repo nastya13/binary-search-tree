@@ -34,7 +34,7 @@ high_of_bstree bst = let
 --getting sum of elements of binary search tree
 sum_elem :: BStree -> Int
 sum_elem bst = let
-					go bst' sum = if bst' /= empty_tree
+                  go bst' sum = if bst' /= empty_tree
 								      then (value bst') + go (bstl bst') 0 + go (bstr bst') 0
 								  else sum
 			   in go bst 0
@@ -43,7 +43,7 @@ sum_elem bst = let
 --finding element in binary search tree
 find_elem :: BStree -> Int -> String
 find_elem bst elem = let
-						go bst' res = if (value bst') == elem
+                        go bst' res = if (value bst') == elem
 									      then (res ++ show (value bst'))
 									  else
 									      if elem < (value bst')
