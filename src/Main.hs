@@ -3,9 +3,9 @@ module Main where
 
 -------------------------------------------------------------
 data BStree = BNil | Node { value :: Int 
-						  , bstl :: BStree
-						  , bstr :: BStree
-						  }  deriving (Show, Eq)
+                          , bstl :: BStree
+                          , bstr :: BStree
+                          }  deriving (Show, Eq)
 --Interp. Binary search tree
 
 empty_tree :: BStree
