@@ -23,11 +23,8 @@ genBStree (x:xs) = Node x (genBStree (filter (<x) xs))
 -------------------------------------------------------------
 --finding high of binary search tree
 high_of_bstree :: BStree -> Int
-high_of_bstree bst = let 
-                        go bst' count = if bst' /= empty_tree 
-                                            then go (bstl bst') count+1
-                                        else count
-                     in go bst (if bst /= empty_tree then 1 else 0)
+high_of_bstree BNil = 0
+high_of_bstree bst = 1 + max (high_of_bstree (bstl bst)) (high_of_bstree (bstr bst))
 
 
 -------------------------------------------------------------
@@ -56,4 +53,4 @@ find_elem bst elem = let
 
 
 
-main = print(find_elem (genBStree [7,2,4,8]) 4)
+main = print(high_of_bstree (genBStree [9,4,6,10]))
